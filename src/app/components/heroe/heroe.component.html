@@ -1,0 +1,25 @@
+<h1>{{heroe.nombre}}<small>{{heroe.fec}}</small></h1>
+<hr>
+<div class="row">
+  <div class="col-md-4">
+    <img src="{{heroe.img}}" alt="">
+    <br>
+    <a href="heroes" class="btn btn-danger">Regresa</a>
+  </div>
+  <div class="col-md-8">
+    <h3>{{heroe.nombre}}</h3>
+    <hr>
+    <p>
+      {{heroe.bio}}
+    </p>
+    <div *ngIf="heroe.casa === 'externo'; else interno">
+      <img src="" alt="">
+    </div>
+    <ng-template #interno>
+      <div>
+        <img src="https://interno.es/wp-content/uploads/2017/07/interno-1.jpg"
+          alt="">
+      </div>
+    </ng-template>
+  </div>
+</div>
